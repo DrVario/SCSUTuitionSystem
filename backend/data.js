@@ -5,12 +5,12 @@ const DataSchema = new Schema(
     {
         "Id": Number,
         "Semseter" : String,
-        "PaymentHistory" : {
+        "PaymentHistory" : [{
             "DatePaid" : Date,
             "PaymentAmount" : Number,
             "PaymentSource" : String,
-        },
-        "TuitionBreakdown" : {
+        }],
+        "TuitionBreakdown" : [{
             "ActivityFee" : Number,
             "MSUSA" : Number,
             "TechnologyFee" : Number,
@@ -18,15 +18,15 @@ const DataSchema = new Schema(
             "FaciltiesAssesment" : Number,
             "StudentUnion" : Number,
             "HealthServices" : Number,
-        },
-        "ViewScholarships" : {
+        }],
+        "ViewScholarships" : [{
             "ScholarshipAmount" : Number,
             "ScholarshipSource" : String,
-        },
-        "StudentEmployment" : {
+        }],
+        "StudentEmployment" : [{
             "RoutingNumber" : String,
             "HoursWorked" : Number,
-        }, 
+        }], 
     }
 );
 
