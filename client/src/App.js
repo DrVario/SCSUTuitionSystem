@@ -2,9 +2,15 @@ import React, {
   Component
 } from 'react';
 
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import { Navbar, Jumbotron, Button, CardDeck, Card, Container, Row, DropdownButton, Dropdown, Col } from 'react-bootstrap';
 
-
+{/*TODO List:
+    - Find pictures for the cards
+    - Layout the cards in a more organized way
+    - Create login popover
+    - Create popovers for each tab
+    - import some form of graphing system 
+  */}
 
 class App extends Component {
   state = {
@@ -62,6 +68,83 @@ class App extends Component {
           {' St. Cloud State Tuition '}
         </Navbar.Brand>
       </Navbar>
+      {/*Creates the dropdown button allowing people to select the semester that they what to view*/}
+      <Container>
+        <Row>
+        <Col sm="12" md={{ size: 6, offset: 3 }}>
+          <Dropdown>
+            <Dropdown.Toggle variant="dark" id="change-semseter">
+              Change Semester
+            </Dropdown.Toggle>
+          </Dropdown>
+          </Col>
+        </Row>
+      </Container>
+      {/*TODO: Grant please fix the col and the row */}
+      <Container fluid>
+      <Row>
+      <CardDeck>
+          <Card>
+            <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
+             <Card.Body>
+                <Card.Title>Make Payments</Card.Title>
+                <Card.Text>
+                  Grant Do this later need to fetch payment stuff
+               </Card.Text>
+               <Button variant="primary">Pay Now</Button>
+              </Card.Body>
+            </Card>
+          </CardDeck>
+          <CardDeck>
+          <Card>
+            <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
+             <Card.Body>
+                <Card.Title>Payment History</Card.Title>
+                <Card.Text>
+                  Grant Do this later need to fetch payment stuff
+               </Card.Text>
+               <Button variant="primary">View Now</Button>
+              </Card.Body>
+            </Card>
+          </CardDeck>
+        <CardDeck>
+          <Card>
+            <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
+             <Card.Body>
+                <Card.Title>Tuition Breakdown</Card.Title>
+                <Card.Text>
+                  Grant Do this later need to fetch Tuiton Stuff
+               </Card.Text>
+               <Button variant="primary">View Now</Button>
+              </Card.Body>
+            </Card>
+          </CardDeck>
+      <CardDeck>
+      <Card>
+        <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
+         <Card.Body>
+            <Card.Title>View Scholarships</Card.Title>
+            <Card.Text>
+              Grant Do this later need to fetch Scholarship Stuff
+           </Card.Text>
+           <Button variant="primary">View Now</Button>
+          </Card.Body>
+        </Card>
+      </CardDeck>
+      <CardDeck>
+      <Card>
+        <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
+         <Card.Body>
+            <Card.Title>Student Employment</Card.Title>
+            <Card.Text>
+              Grant Do this later need to fetch Student Employment
+           </Card.Text>
+           <Button variant="primary">View Now</Button>
+          </Card.Body>
+        </Card>
+      </CardDeck>
+      </Row>
+      </Container>
       </div>
       );
     }
