@@ -2,20 +2,28 @@ import React, {
   Component
 } from 'react';
 
-import { Navbar, Jumbotron, Button, CardDeck, Card, Container, Row, DropdownButton, Dropdown, Col } from 'react-bootstrap';
+import { Navbar, Button, CardDeck, Card, Container, Row, Dropdown, Col, Modal, Form, FormControl} from 'react-bootstrap';
 
 {/*TODO List:
     - Find pictures for the cards
     - Layout the cards in a more organized way
-    - Create login popover
-    - Create popovers for each tab
+    - Create Modal popover
+    - Create Modal for each tab
     - import some form of graphing system 
+    - Add forms to the pay tab
   */}
 
 class App extends Component {
+  handleShow = this.handleShow.bind(this);
+  handleClose = this.handleClose.bind(this);
   state = {
     loading: true,
-    Infromation: null
+    Infromation: null,
+    PayShow: false,
+    HistoryShow: false,
+    TuitionShow: false,
+    ScholarshipShow: false,
+    EmploymentShow: false,
   };
 
   async componentDidMount() {
@@ -35,7 +43,20 @@ class App extends Component {
     }
   }
 
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
+
   render() {
+    let PayClose = () => this.setState({ PayShow: false });
+    let HistoryClose = () => this.setState({ HistoryShow: false });
+    let TuitionClose = () => this.setState({ TuitionShow: false });
+    let ScholarshipClose = () => this.setState({ ScholarshipShow: false }); 
+    let EmploymentClose = () => this.setState({ EmploymentShow: false });
     if (this.state.loading) {
       return <div>loading...</div>
     }
@@ -80,9 +101,11 @@ class App extends Component {
           </Col>
         </Row>
       </Container>
+      <br></br>
       {/*TODO: Grant please fix the col and the row */}
       <Container fluid>
       <Row>
+      {/*Payment Section */}
       <CardDeck>
           <Card>
             <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
@@ -91,10 +114,93 @@ class App extends Component {
                 <Card.Text>
                   Grant Do this later need to fetch payment stuff
                </Card.Text>
-               <Button variant="primary">Pay Now</Button>
+               <Button variant="primary" onClick={() => this.setState({ PayShow: true })}>Pay Now</Button>
               </Card.Body>
             </Card>
           </CardDeck>
+
+          <Modal
+            size="lg"
+            show={this.state.PayShow}
+            onHide={PayClose}
+            aria-labelledby="example-modal-sizes-title-lg"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Pay Bill
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+
+            <Form>
+              <Form.Group controlId="formCardNumber">
+              <Form.Label>Card Number</Form.Label>
+              <Form.Control type="cardNumber" placeholder="Enter Card Number"/>
+              </Form.Group>
+
+              <Form.Row>
+
+              <Form.Group as={Col} controlId="formCardExpire">
+              <Form.Label>Experation Date</Form.Label>
+              <Form.Control type="cardExperation" placeholder="MM/YY"/>
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formCardSecurity">
+              <Form.Label>Security Code</Form.Label>
+              <Form.Control type="cardSecurity" placeholder="000"/>
+              </Form.Group>
+
+              </Form.Row>
+
+              <Form.Group controlId="formHolderFullName">
+              <Form.Label>Card Holder Name</Form.Label>
+              <Form.Control type="cardHolderName" placeholder="Full Name"/>
+              </Form.Group>
+
+              <Form.Group controlId="formEmail">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control type="email" placeholder="Email Address"/>
+              </Form.Group>
+
+              <Form.Group controlId="formAdressOne">
+              <Form.Label>Primary Address</Form.Label>
+              <Form.Control type="addressOne" placeholder="1234 Main St"/>
+              </Form.Group>
+
+              <Form.Group controlId="formAdressTwo">
+              <Form.Label>Secondary Address</Form.Label>
+              <Form.Control type="addressTwo" placeholder="Apartment, Studio, Floor"/>
+              </Form.Group>
+
+              <Form.Row>
+
+              <Form.Group as={Col} controlId="formCity">
+              <Form.Label>City</Form.Label>
+              <Form.Control type="city"/>
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formState">
+              <Form.Label>State</Form.Label>
+              <Form.Control type="state"/>
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formZip">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control type="Zip"/>
+              </Form.Group>
+
+             </Form.Row>
+
+            </Form>
+
+            <Button variant="primary" type="submit">
+           Submit
+            </Button>
+
+          </Modal.Body>
+        </Modal>
+
+        {/*Payment History Section */}
           <CardDeck>
           <Card>
             <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
@@ -103,10 +209,12 @@ class App extends Component {
                 <Card.Text>
                   Grant Do this later need to fetch payment stuff
                </Card.Text>
-               <Button variant="primary">View Now</Button>
+               <Button variant="primary" onClick={() => this.setState({ HistoryShow: true })}>View Now</Button>
               </Card.Body>
             </Card>
           </CardDeck>
+
+        {/*Tuition Section */}
         <CardDeck>
           <Card>
             <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
@@ -115,10 +223,12 @@ class App extends Component {
                 <Card.Text>
                   Grant Do this later need to fetch Tuiton Stuff
                </Card.Text>
-               <Button variant="primary">View Now</Button>
+               <Button variant="primary" onClick={() => this.setState({ TuitionShow: true })}>View Now</Button>
               </Card.Body>
             </Card>
           </CardDeck>
+
+        {/*Scholarship Section */}
       <CardDeck>
       <Card>
         <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
@@ -127,10 +237,12 @@ class App extends Component {
             <Card.Text>
               Grant Do this later need to fetch Scholarship Stuff
            </Card.Text>
-           <Button variant="primary">View Now</Button>
+           <Button variant="primary" onClick={() => this.setState({ ScholarshipShow: true })}>View Now</Button>
           </Card.Body>
         </Card>
       </CardDeck>
+
+        {/*Employment Section */}
       <CardDeck>
       <Card>
         <Card.Img variant="top"src={require('./assets/group.png')} style={{ width: '366px', height: '160px' }} />
@@ -139,10 +251,11 @@ class App extends Component {
             <Card.Text>
               Grant Do this later need to fetch Student Employment
            </Card.Text>
-           <Button variant="primary">View Now</Button>
+           <Button variant="primary" onClick={() => this.setState({ EmploymentShow: true })}>View Now</Button>
           </Card.Body>
         </Card>
       </CardDeck>
+
       </Row>
       </Container>
       </div>
