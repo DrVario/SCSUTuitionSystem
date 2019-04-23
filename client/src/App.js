@@ -256,6 +256,23 @@ class App extends Component {
         </Card>
       </CardDeck>
 
+      <Modal
+            size="lg"
+            show={this.state.EmploymentShow}
+            onHide={EmploymentClose}
+            aria-labelledby="example-modal-sizes-title-lg"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Test
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+
+
+          </Modal.Body>
+        </Modal>
+
       </Row>
       </Container>
       </div>
