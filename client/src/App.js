@@ -18,7 +18,7 @@ class App extends Component {
   handleShow = this.handleShow.bind(this);
   handleClose = this.handleClose.bind(this);
   state = {
-    loading: true,
+    loading: false,
     Infromation: null,
     PayShow: false,
     HistoryShow: false,
