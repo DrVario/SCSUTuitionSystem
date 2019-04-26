@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const Data = require("./data");
+const path = require('path')
 
 const app = express();
 const router = express.Router();
@@ -10,11 +11,11 @@ const router = express.Router();
 
 const dbRoute = "mongodb://Grant:WXK7M3WTpsLrw8m@ds155815.mlab.com:55815/scsutuition";
 
-app.use(express.static(path.join(__dirname, '/client/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join(__dirname + 'client/build/index.html'))
 })
 
 
@@ -59,4 +60,4 @@ router.post("/updateData", (req, res) => {
 
 app.use("/api", router);
 const PORT = (process.env.PORT || 5000)
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
