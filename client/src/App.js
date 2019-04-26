@@ -29,7 +29,7 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    const url = "/api/getData";
+    const url = "http://localhost:5000/api/getData";
     const response = await fetch(url);
     const getData = await response.json();
     this.setState({Infromation: getData.data[0], loading: false });
