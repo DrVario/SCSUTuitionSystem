@@ -58,5 +58,5 @@ router.post("/updateData", (req, res) => {
   });
 
 app.use("/api", router);
-const PORT = process.env.PORT || 5000
+const PORT = (process.env.PORT || 5000)
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
