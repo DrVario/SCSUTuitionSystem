@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "e2dde3acecdc361a5124",
+    "revision": "fa43b89463f851dda260",
     "url": "/SCSUTuitionSystem/static/css/main.56e2858b.chunk.css"
   },
   {
-    "revision": "e2dde3acecdc361a5124",
-    "url": "/SCSUTuitionSystem/static/js/main.e2dde3ac.chunk.js"
+    "revision": "fa43b89463f851dda260",
+    "url": "/SCSUTuitionSystem/static/js/main.fa43b894.chunk.js"
   },
   {
     "revision": "b0ff595abb5073ed4fee",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/SCSUTuitionSystem/static/media/iself.27c26b74.png"
   },
   {
-    "revision": "8761c3edd2baa217d6cd6465998472ef",
+    "revision": "ef1de82dd643dafdee423ccc06353378",
     "url": "/SCSUTuitionSystem/index.html"
   }
 ];
