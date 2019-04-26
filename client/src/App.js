@@ -267,7 +267,7 @@ class App extends Component {
              <Card.Body>
                 <Card.Title>Tuition Breakdown</Card.Title>
                 <Card.Text>
-                  idk man
+                  See how the tuition total is determined
                </Card.Text>
                <Button variant="danger" onClick={() => this.setState({ TuitionShow: true })}>View Now</Button>
               </Card.Body>
