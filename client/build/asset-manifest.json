@@ -1,0 +1,22 @@
+{
+  "main.css": "/static/css/main.4a42b4ba.chunk.css",
+  "main.js": "/static/js/main.63f585f9.chunk.js",
+  "main.js.map": "/static/js/main.63f585f9.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
+  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
+  "static/css/2.5687fe15.chunk.css": "/static/css/2.5687fe15.chunk.css",
+  "static/js/2.5ed481e6.chunk.js": "/static/js/2.5ed481e6.chunk.js",
+  "static/js/2.5ed481e6.chunk.js.map": "/static/js/2.5ed481e6.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.2c5a1b47dc253b7fa5df91d0266e4041.js": "/precache-manifest.2c5a1b47dc253b7fa5df91d0266e4041.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/2.5687fe15.chunk.css.map": "/static/css/2.5687fe15.chunk.css.map",
+  "static/css/main.4a42b4ba.chunk.css.map": "/static/css/main.4a42b4ba.chunk.css.map",
+  "static/media/bed.png": "/static/media/bed.6d3a0eea.png",
+  "static/media/bridge.png": "/static/media/bridge.ce4bb023.png",
+  "static/media/group.png": "/static/media/group.76dd097f.png",
+  "static/media/hockey.png": "/static/media/hockey.af307123.png",
+  "static/media/iself.png": "/static/media/iself.27c26b74.png",
+  "static/media/logo.svg": "/static/media/logo.573c825e.svg",
+  "static/media/river.png": "/static/media/river.4422ddd5.png"
+}
