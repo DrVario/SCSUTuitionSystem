@@ -10,11 +10,11 @@ const router = express.Router();
 
 const dbRoute = "mongodb://Grant:WXK7M3WTpsLrw8m@ds155815.mlab.com:55815/scsutuition";
 
-app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, '/client/build')))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '../client/build/index.html'))
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
 
